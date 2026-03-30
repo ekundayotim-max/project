@@ -141,7 +141,7 @@ input[type="text"], input[type="password"] {
     color: #0a66c2;
     text-decoration: none;
     font-weight: 600;
-
+}
 
 @media (min-width: 769px) {
     body {
