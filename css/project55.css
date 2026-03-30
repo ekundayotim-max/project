@@ -30,18 +30,19 @@ body {
   font-weight: bold;
   font-size: 24px;
 }
-.nav-links{
+
+.nav-links {
   display: flex;
   gap: 10px;
 
-  .img a{
+  .img a {
     display: flex;
     flex-direction: column;
     gap: 10px;
     align-items: center;
   }
 
-  .img6 a{
+  .img6 a {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -51,11 +52,13 @@ body {
     width: 100px;
   }
 }
-.nav-links img{
+
+.nav-links img {
   width: 20px;
   height: 20px;
   /* padding-left: 25px; */
 }
+
 .nav-links a {
   text-decoration: none;
   color: #666;
@@ -64,23 +67,26 @@ body {
 }
 
 .nav-links a.active {
-  color:;
+  color: ;
   border-bottom: 2px solid black;
   padding-bottom: 5px;
 }
-.btn-join{
+
+.btn-join {
   padding: 15px 27px;
   background: none;
   border-radius: 30px;
   font-weight: 500;
-  cursor:pointer; 
+  cursor: pointer;
   color: black;
-  border: none;  
+  border: none;
 }
-.btn-join:hover{
-    background-color:rgb(235, 235, 235);
-    
+
+.btn-join:hover {
+  background-color: rgb(235, 235, 235);
+
 }
+
 .btn-signin {
   border: 1px solid #0a66c2;
   color: #0a66c2;
@@ -90,9 +96,11 @@ body {
   font-weight: 500;
   cursor: pointer;
 }
-.btn-signin:hover{
-    background-color: rgb(227, 241, 255);
+
+.btn-signin:hover {
+  background-color: rgb(227, 241, 255);
 }
+
 .container {
   display: flex;
   justify-content: center;
@@ -118,6 +126,7 @@ body {
   font-size: 14px;
   margin-bottom: 24px;
 }
+
 .game-item {
   display: flex;
   justify-content: space-between;
@@ -154,13 +163,21 @@ body {
   border-left: 1px solid #e0e0e0;
 }
 
-.patches-bg { background-color: #fee; }
-.sudoku-bg  { background-color: #efe; }
-.zip-bg     { background-color: #fef3e8; }
+.patches-bg {
+  background-color: #fee;
+}
+
+.sudoku-bg {
+  background-color: #efe;
+}
+
+.zip-bg {
+  background-color: #fef3e8;
+}
 
 @media (max-width: 768px) {
   .nav-links {
-    display: none; 
+    display: none;
   }
 
   .card-wrapper {
@@ -173,6 +190,7 @@ body {
   .game-icon {
     width: 70px;
   }
+
   .intro h1 {
     font-size: 20px;
   }
