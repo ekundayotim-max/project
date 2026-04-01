@@ -20,12 +20,7 @@
   --border-soft: rgba(0, 0, 0, 0.15);
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
-  color: var(--text-main);
   background: #ffffff;
   overflow-x: hidden;
 }
@@ -941,6 +936,7 @@ h1 {
 
   .header {
     position: static;
+    background: url(/multimedia/second\ logooo.webp);
   }
 
   .nav-content {

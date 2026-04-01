@@ -5,193 +5,434 @@
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-body {
-  color: #000000e6;
+:root {
+  --page-max-width: 1128px;
+  --section-padding: 24px;
+  --linkedin-blue: #0a66c2;
+  --linkedin-blue-dark: #004182;
+  --page-bg: #f3f2ef;
+  --card-border: #d9d9d9;
+  --muted-text: rgba(0, 0, 0, 0.6);
+  --main-text: rgba(0, 0, 0, 0.9);
 }
 
-.navbar {
-  background: white;
-  padding: 10px 20px;
+body {
+  background: var(--page-bg);
+  color: var(--main-text);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.header {
   position: sticky;
   top: 0;
   z-index: 100;
+  background: #ffffff;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.navbar {
+  background: #ffffff;
 }
 
 .nav-content {
-  max-width: 1128px;
+  max-width: var(--page-max-width);
+  min-height: 72px;
   margin: 0 auto;
+  padding: 0 var(--section-padding);
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  gap: 20px;
 }
 
 .logo {
-  color: #0a66c2;
-  font-weight: bold;
-  font-size: 24px;
+  flex-shrink: 0;
 }
 
 .nav-links {
   display: flex;
-  gap: 10px;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
 
-  .img a {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-  }
+.nav-links .img a,
+.nav-links .img6 a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 72px;
+  padding: 8px 6px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--muted-text);
+}
 
-  .img6 a {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-    border-left: 1px solid gray;
-    border-right: 1px solid gray;
-    width: 100px;
-  }
+.nav-links .img6 a {
+  border-left: 1px solid #d9d9d9;
+  padding-left: 16px;
+  margin-left: 4px;
 }
 
 .nav-links img {
   width: 20px;
   height: 20px;
-  /* padding-left: 25px; */
 }
 
-.nav-links a {
+.first p {
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+.auth-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 8px;
+  flex-shrink: 0;
+}
+
+.auth-buttons a {
   text-decoration: none;
-  color: #666;
-  font-size: 14px;
-  margin: 0 15px;
 }
 
-.nav-links a.active {
-  color: ;
-  border-bottom: 2px solid black;
-  padding-bottom: 5px;
+.btn-join,
+.btn-signin {
+  min-height: 48px;
+  padding: 0 24px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
 .btn-join {
-  padding: 15px 27px;
-  background: none;
-  border-radius: 30px;
-  font-weight: 500;
-  cursor: pointer;
-  color: black;
+  background: transparent;
   border: none;
+  color: var(--main-text);
 }
 
 .btn-join:hover {
-  background-color: rgb(235, 235, 235);
-
+  background: #ebebeb;
 }
 
 .btn-signin {
-  border: 1px solid #0a66c2;
-  color: #0a66c2;
-  padding: 15px 27px;
-  border-radius: 30px;
-  background: none;
-  font-weight: 500;
-  cursor: pointer;
+  background: transparent;
+  border: 1px solid var(--linkedin-blue);
+  color: var(--linkedin-blue);
 }
 
 .btn-signin:hover {
-  background-color: rgb(227, 241, 255);
+  background: #e3f1ff;
 }
 
 .container {
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  padding: 56px var(--section-padding) 80px;
   display: flex;
   justify-content: center;
-  padding: 40px 20px;
 }
 
 .card-wrapper {
-  background: white;
-  width: 100%;
-  max-width: 550px;
-  border-radius: 10px;
-  border: 1px solid #e0e0e0;
-  padding: 24px;
+  width: min(100%, 760px);
+  background: #ffffff;
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+.intro {
+  margin-bottom: 24px;
 }
 
 .intro h1 {
-  font-size: 24px;
-  margin-bottom: 8px;
+  font-size: 40px;
+  line-height: 1.1;
+  font-weight: 400;
+  margin-bottom: 10px;
 }
 
 .intro p {
-  color: #666;
-  font-size: 14px;
-  margin-bottom: 24px;
+  color: var(--muted-text);
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 .game-item {
   display: flex;
+  align-items: stretch;
   justify-content: space-between;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  margin-bottom: 12px;
+  border: 1px solid #e4e4e4;
+  border-radius: 10px;
+  margin-bottom: 14px;
+  background: #ffffff;
+  overflow: hidden;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
 .game-item:hover {
-  background-color: #f9f9f9;
+  background: #f9fafb;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.game-item:last-child {
+  margin-bottom: 0;
 }
 
 .game-text {
-  padding: 16px;
+  flex: 1 1 auto;
+  padding: 20px 22px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 4px;
 }
 
 .subtitle {
-  font-size: 12px;
-  color: #666;
-  margin-bottom: 4px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--muted-text);
+}
+
+.game-text h2 {
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: 600;
 }
 
 .game-icon {
-  width: 100px;
+  width: 112px;
+  min-width: 112px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 32px;
-  border-left: 1px solid #e0e0e0;
+  border-left: 1px solid #ececec;
+  font-size: 40px;
 }
 
 .patches-bg {
-  background-color: #fee;
+  background: #f9c7cf;
 }
 
 .sudoku-bg {
-  background-color: #efe;
+  background: #cde8c4;
 }
 
 .zip-bg {
-  background-color: #fef3e8;
+  background: #f8d8ae;
 }
 
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
+@media (max-width: 1100px) {
+  .nav-content,
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .nav-links .img a,
+  .nav-links .img6 a {
+    min-width: 64px;
   }
 
   .card-wrapper {
-    max-width: 100%;
-    border: none;
+    width: min(100%, 700px);
   }
 }
 
-@media (max-width: 480px) {
-  .game-icon {
-    width: 70px;
+@media (max-width: 900px) {
+  .nav-content {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    min-height: auto;
+  }
+
+  .nav-links {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 0;
+  }
+
+  .auth-buttons {
+    width: 100%;
+    justify-content: center;
+    margin-left: 0;
+  }
+
+  .container {
+    padding-top: 40px;
+    padding-bottom: 56px;
+  }
+
+  .card-wrapper {
+    padding: 28px;
   }
 
   .intro h1 {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 700px) {
+  :root {
+    --section-padding: 18px;
+  }
+
+  .nav-links .img6 a {
+    border-left: none;
+    padding-left: 6px;
+    margin-left: 0;
+  }
+
+  .nav-links .img a,
+  .nav-links .img6 a {
+    min-width: 56px;
+    gap: 4px;
+  }
+
+  .first p {
+    font-size: 11px;
+  }
+
+  .btn-join,
+  .btn-signin {
+    min-height: 44px;
+    padding: 0 18px;
+    font-size: 15px;
+  }
+
+  .card-wrapper {
+    padding: 24px 20px;
+    border-radius: 10px;
+  }
+
+  .intro h1 {
+    font-size: 30px;
+  }
+
+  .intro p {
+    font-size: 15px;
+  }
+
+  .game-text {
+    padding: 18px;
+  }
+
+  .game-text h2 {
+    font-size: 22px;
+  }
+
+  .game-icon {
+    width: 96px;
+    min-width: 96px;
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 560px) {
+  .img,
+  .img6 {
+    display: none;
+  }
+
+  .nav-links {
+    justify-content: stretch;
+  }
+
+  .auth-buttons {
+    width: 100%;
+    gap: 12px;
+  }
+
+  .auth-buttons a {
+    flex: 1 1 0;
+  }
+
+  .btn-join,
+  .btn-signin {
+    width: 100%;
+  }
+
+  .container {
+    padding-top: 28px;
+    padding-bottom: 40px;
+  }
+
+  .intro h1 {
+    font-size: 28px;
+  }
+
+  .game-item {
+    flex-direction: column;
+  }
+
+  .game-text {
+    padding-bottom: 14px;
+  }
+
+  .game-icon {
+    width: 100%;
+    min-width: 100%;
+    min-height: 86px;
+    border-left: none;
+    border-top: 1px solid #ececec;
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 400px) {
+  :root {
+    --section-padding: 14px;
+  }
+
+  .nav-content {
+    gap: 12px;
+  }
+
+  .logo img {
+    width: 88px !important;
+  }
+
+  .auth-buttons {
+    flex-direction: column;
+  }
+
+  .auth-buttons a {
+    width: 100%;
+  }
+
+  .card-wrapper {
+    padding: 20px 16px;
+  }
+
+  .intro h1 {
+    font-size: 24px;
+  }
+
+  .intro p,
+  .subtitle {
+    font-size: 14px;
+  }
+
+  .game-text h2 {
     font-size: 20px;
+  }
+
+  .game-icon {
+    min-height: 76px;
+    font-size: 28px;
   }
 }
