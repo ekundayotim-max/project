@@ -659,6 +659,7 @@ h1 {
 .circle-crop {
   width: min(550px, 100%);
   aspect-ratio: 1 / 1;
+  margin-right: -400px;
 }
 
 .cta-banner-section {
