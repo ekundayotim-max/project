@@ -82,6 +82,7 @@ img {
   text-align: center;
 }
 
+
 .img6 a {
   border-left: 1px solid #d9d9d9;
   padding-left: 18px;
@@ -98,6 +99,9 @@ img {
   line-height: 1.2;
 }
 
+.first p:hover{
+  text-decoration: underline;
+}
 .auth-buttons {
   display: flex;
   align-items: center;
@@ -501,6 +505,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: -250px;
 }
 
 .circle-image-container,
